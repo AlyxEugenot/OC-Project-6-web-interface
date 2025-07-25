@@ -1,0 +1,16 @@
+body {
+  margin: 2.5rem;
+}
+
+#header {
+  background-color: #61787f;
+}
+
+#spotlight{
+  height: 20rem;
+  background-color: aquamarine;
+}
+
+.btn {
+  color: #fa0b0b;
+}

@@ -24,6 +24,8 @@ python OCMovies-API-EN-FR\manage.py runserver
 
 ```
 source OCMovies-API-EN-FR/env/Scripts/activate
+```
+```
 python OCMovies-API-EN-FR/manage.py runserver
 ```
 
