@@ -1,16 +1,138 @@
-body {
-  margin: 2.5rem;
+/* bootstrap breakpoints :
+sm > 576
+md > 768
+lg > 992 */
+
+@font-face {
+  font-family: "oswald";
+  src: url("assets/Oswald-Regular.ttf");
+  font-weight: 400;
 }
 
-#header {
+@font-face {
+  font-family: "oswald";
+  src: url("assets/Oswald-Light.ttf");
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: "oswald";
+  src: url("assets/Oswald-Bold.ttf");
+  font-weight: 700;
+}
+
+html {
+  font-size: 24px;
+}
+
+body {
+  padding: 2.5rem 4rem;
+  background-color: beige;
+  max-width: 1000px;
+  margin: auto;
+  font-family: "oswald", sans-serif;
+}
+
+header {
   background-color: #61787f;
 }
 
-#spotlight{
-  height: 20rem;
-  background-color: aquamarine;
+.header-logo {
+  max-width: 170px;
 }
 
-.btn {
-  color: #fa0b0b;
+header h1 {
+  color: white;
+  font-weight: 300; /* j'arrive pas à le faire respecter */
+}
+
+section h1 {
+  margin: 1em 0;
+}
+
+.best-movie > div {
+  background-color: aquamarine;
+  border: 5px solid black;
+  padding: 0.5em 1em;
+}
+
+.best-movie img {
+  width: 100%;
+}
+
+.best-movie h2 {
+  font-stretch: extra-expanded; /* j'arrive pas à le faire respecter */
+}
+
+.best-movie button {
+  background-color: #fa0b0b;
+  color: white;
+  border-radius: 25px;
+  padding: 20px 40px;
+}
+
+.best-movie .d-flex > .col > img {
+  line-height: 50%;
+}
+
+.bg-image {
+  aspect-ratio: 1/1;
+  background-image: url("assets/biglebow.png");
+  background-position: center;
+  background-size: cover;
+  background-origin: border-box;
+  position: relative;
+  width: 100%;
+}
+.bg-image > .overlay {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 15%;
+  padding: 1em;
+  background: rgba(20, 20, 20, 0.55);
+  color: white;
+}
+
+.overlay > h3 {
+  color: white;
+}
+
+.overlay > .details {
+  background-color: #2d2c2c;
+  position: relative;
+  right: 0;
+  float: right;
+}
+
+/* TODO remove debug below*/
+.container {
+  background-color: aqua;
+}
+.row {
+  background-color: skyblue;
+}
+.col {
+  background-color: royalblue;
+}
+
+.details {
+  background-color: #fa0b0b;
+  color: white;
+  border-radius: 18px;
+  padding: 5px 30px;
+  text-align: center;
+}
+
+@media (max-width: 992px) {
+  .best-movie .details {
+    padding: 5px 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .best-movie img {
+    aspect-ratio: 4/3;
+    object-fit: cover;
+  }
 }

@@ -13,102 +13,116 @@
   <!-- https://www.notion.so/Formation-OC-5a4c5e62365e431aa8a65136525da2fb?source=copy_link#1f54325ec9e98025b6a5f39420343879 -->
 
   <body>
+    <!-- TODO gérer padding sur le body ou trouver comment gérer plus que ce que j'ai fait  -->
+    <header class="d-flex">
+      <div class="mx-auto mx-md-0">
+        <!-- TODO faire l'aspect ratio / max height pour xs et sm (l'image est pas enitère) -->
+        <img src="assets/img/JustStreamItLogo.png" alt="Just Stream It logo" class="header-logo" />
+      </div>
+      <h1 class="d-none m d-md-inline align-self-center">Vidéos à la demande</h1>
+    </header>
+    <section class="best-movie">
+      <h1>Meilleur film</h1>
+      <div class="d-flex flex-wrap flex-md-nowrap gap-4">
+        <aside class="w-md-25">
+          <div>
+            <img src="assets/img/biglebow.png" alt="Cover image of [insérer <original_title>]" />
+          </div>
+        </aside>
+        <article>
+          <h2>Titre film</h2>
+          <p class="p-lg-2">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores ducimus dolor
+            doloribus, corporis maiores vel eos? Voluptatem ab repudiandae quaerat blanditiis,
+            ratione reprehenderit inventore ad sapiente vero, molestias, at molestiae.
+          </p>
+          <div class="d-flex justify-content-center justify-content-md-end">
+            <a href="#" class="details">Détails</a>
+          </div>
+        </article>
+      </div>
+    </section>
     <div class="container">
-      <div class="row" id="header">
-        <div class="col align-self-sm-center align-self-md-start">
-          <img
-            class="img-fluid"
-            src="assets/JustStreamItLogo.png"
-            alt="Just Stream It logo"
-          />
+      <div class="d-flex header">
+        <div class="align-self-sm-center align-self-md-start">
+          <img class="header-logo" src="assets/img/JustStreamItLogo.png" alt="Just Stream It logo" />
         </div>
-        <div class="col visible-md offcanvas-md align-self-center">
+        <div class="visible-md offcanvas-md align-self-center">
           <div class="h2 text-white">Vidéos à la demande</div>
         </div>
       </div>
-    </div>
-    <h1>Meilleur film</h1>
-    <div class="container-fluid border-5" id="spotlight">
-      <div class="row">
+      <h1>Meilleur film</h1>
+      <div class="row" id="spotlight">
         <div class="col-md-4">
-          <img src="assets/biglebow.png" class="img-fluid card" alt="Cover image of [insérer <original_title>]">
+          <img
+            src="assets/img/biglebow.png"
+            class="img-fluid"
+            alt="Cover image of [insérer <original_title>]"
+          />
         </div>
-        <div class="col">
-          <button class="rounded-pill">Détails</button>
-        </div>
-      </div>
-    </div>
-    <h1>Films les mieux notés</h1>
-    <div class="container">
-      <div class="d-flex justify-content-between flex-warp">
-        <div class="container m-3 col-12 col-md-6 col-lg-4 d-none d-lg-block">
-          <img src="assets/biglebow.png" alt="Cover image of [insérer <original_title>]">
-          <h3>Titre1</h3>
-          <button class="rounded-pill">Détails</button>
-        </div>
-        <div class="container m-3 col-12 col-md-6 col-lg-4 d-none d-lg-block">
-          <img src="assets/biglebow.png" alt="Cover image of [insérer <original_title>]">
-          <h3>Titre2</h3>
-          <button class="rounded-pill">Détails</button>
-        </div>
-        <div class="container m-3 col-12 col-md-6 col-lg-4 d-none d-lg-block">
-          <img src="assets/biglebow.png" alt="Cover image of [insérer <original_title>]">
-          <h3>Titre3</h3>
-          <button class="rounded-pill">Détails</button>
-        </div>
-        <div class="container m-3 col-12 col-md-6 col-lg-4 d-none d-lg-block">
-          <img src="assets/biglebow.png" alt="Cover image of [insérer <original_title>]">
-          <h3>Titre4</h3>
-          <button class="rounded-pill">Détails</button>
-        </div>
-        <div class="container m-3 col-12 col-md-6 col-lg-4 d-none d-lg-block">
-          <img src="assets/biglebow.png" alt="Cover image of [insérer <original_title>]">
-          <h3>Titre5</h3>
-          <button class="rounded-pill">Détails</button>
-        </div>
-        <div class="container m-3 col-12 col-md-6 col-lg-4 d-none d-lg-block">
-          <img src="assets/biglebow.png" alt="Cover image of [insérer <original_title>]">
-          <h3>Titre6</h3>
-          <button class="rounded-pill">Détails</button>
+        <div class="col px-lg-5 pe-lg-5">
+          <div class="text-center">
+            <h2>Titre Film</h2>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, deleniti. Soluta quod
+              laudantium blanditiis pariatur?
+            </p>
+            <a class="details rounded-pill float-md-end">Détails</a>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="container-md border">
-      <div class="row">
-        <div class="col rounded-4">Col 1</div>
-        <div class="col">Col 2</div>
-      </div>
-    </div>
-    <div class="container">
-      <div class="h1">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias ea magni natus obcaecati
-        itaque corrupti dolorem sapiente, facilis nemo libero, ab explicabo nesciunt quasi ex
-        voluptatem dolores recusandae? Eos, libero.
-      </div>
-      <div>
-        Vero, cupiditate reiciendis sequi, quis impedit ullam, voluptas corporis quisquam alias ad
-        eius id porro dolores facilis? Molestiae, sit itaque? Dolores, optio necessitatibus eveniet
-        aut id deleniti molestias corrupti dolor!
-      </div>
-      <div>
-        Voluptatibus iste sequi excepturi voluptatum qui, voluptate labore explicabo perspiciatis?
-        Iusto nobis est provident obcaecati ex eveniet deserunt ducimus soluta, suscipit voluptatem
-        reprehenderit velit, odio esse sed amet explicabo debitis.
-      </div>
-      <div>
-        Dignissimos ab aperiam dolorem perspiciatis? Nulla sint itaque voluptatum pariatur?
-        Molestias consectetur quam mollitia culpa et cum, commodi doloribus officiis amet,
-        dignissimos optio eum eveniet obcaecati? Modi obcaecati quos voluptas!
-      </div>
-      <div>
-        In quia veritatis, molestiae blanditiis dicta accusamus incidunt at hic. Voluptate ut sequi
-        repudiandae eligendi. Ea illum, praesentium magnam pariatur, maiores eligendi, nobis odit
-        laudantium distinctio illo sit debitis consequuntur.
-      </div>
-      <div>
-        Ex, hic reiciendis. Natus odit enim sunt iure illo cumque eum nesciunt, ut hic impedit
-        placeat odio error explicabo aliquam, aliquid nam? Quos tenetur rem ea. Culpa magni odio
-        repudiandae!
+
+      <h1>Films les mieux notés</h1>
+      <div class="row d-flex justify-content-around flex-warp border-3 border-black gap-3">
+        <div class="col m-3 col-12 col-md-5 col-lg-3 p-0">
+          <div class="bg-image">
+            <div class="overlay">
+              <h3>Titre1</h3>
+              <a class="details rounded-pill">Détails</a>
+            </div>
+          </div>
+        </div>
+        <div class="col m-3 col-12 col-md-5 col-lg-3 p-0">
+          <div class="bg-image">
+            <div class="overlay">
+              <h3>Titre5</h3>
+              <a class="details rounded-pill">Détails</a>
+            </div>
+          </div>
+        </div>
+        <div class="col m-3 col-12 col-md-5 col-lg-3 p-0 d-none d-md-block">
+          <div class="bg-image">
+            <div class="overlay">
+              <h3>Titre5</h3>
+              <a class="details rounded-pill">Détails</a>
+            </div>
+          </div>
+        </div>
+        <div class="col m-3 col-12 col-md-5 col-lg-3 p-0 d-none d-md-block">
+          <div class="bg-image">
+            <div class="overlay">
+              <h3>Titre5</h3>
+              <a class="details rounded-pill">Détails</a>
+            </div>
+          </div>
+        </div>
+        <div class="col m-3 col-12 col-md-5 col-lg-3 p-0 d-none d-lg-block">
+          <div class="bg-image">
+            <div class="overlay">
+              <h3>Titre5</h3>
+              <a class="details rounded-pill">Détails</a>
+            </div>
+          </div>
+        </div>
+        <div class="col m-3 col-12 col-md-5 col-lg-3 p-0 d-none d-lg-block">
+          <div class="bg-image">
+            <div class="overlay">
+              <h3>Titre5</h3>
+              <a class="details rounded-pill">Détails</a>
+            </div>
+          </div>
+        </div>
+        <a class="details d-lg-none w-50 rounded-pill">Voir plus</a>
       </div>
     </div>
     <script src="index.js"></script>
