@@ -3,34 +3,44 @@ sm > 576
 md > 768
 lg > 992 */
 
-@font-face {
-  font-family: "oswald";
-  src: url("assets/Oswald-Regular.ttf");
-  font-weight: 400;
-}
-
-@font-face {
-  font-family: "oswald";
-  src: url("assets/Oswald-Light.ttf");
-  font-weight: 300;
-}
-
-@font-face {
-  font-family: "oswald";
-  src: url("assets/Oswald-Bold.ttf");
-  font-weight: 700;
-}
-
 html {
   font-size: 24px;
 }
 
 body {
   padding: 2.5rem 4rem;
-  background-color: beige;
-  max-width: 1000px;
+  max-width: 1200px;
   margin: auto;
   font-family: "oswald", sans-serif;
+}
+
+h1 {
+  font-size: 48px;
+}
+
+.details {
+  background-color: #fa0b0b;
+  color: white;
+  text-align: center;
+  border-radius: 25px;
+  padding: 15px 50px;
+  text-decoration: none;
+  font-weight: 400;
+  /* font-weight: 500 in maquette */
+}
+
+.details.plus {
+  padding: 0 80px;
+  margin: auto;
+  margin-top: 10px;
+  width: 30%;
+}
+
+.dropdown a {
+  font-size: 36px;
+  font-weight: 600;
+  border: 1px solid black;
+  border-radius: 0;
 }
 
 header {
@@ -43,96 +53,225 @@ header {
 
 header h1 {
   color: white;
-  font-weight: 300; /* j'arrive pas à le faire respecter */
+  font-weight: 300;
+  font-size: 40px;
 }
 
 section h1 {
-  margin: 1em 0;
+  margin: 1rem 0 1.5rem 0;
 }
 
-.best-movie > div {
-  background-color: aquamarine;
+.container {
+  max-width: 100%;
+  padding: 0;
+}
+
+.best-movie > .d-flex {
   border: 5px solid black;
   padding: 0.5em 1em;
 }
 
 .best-movie img {
   width: 100%;
+  min-width: 20vh;
+  height: auto;
 }
 
 .best-movie h2 {
-  font-stretch: extra-expanded; /* j'arrive pas à le faire respecter */
+  font-weight: 600;
 }
 
-.best-movie button {
-  background-color: #fa0b0b;
-  color: white;
-  border-radius: 25px;
-  padding: 20px 40px;
-}
-
-.best-movie .d-flex > .col > img {
-  line-height: 50%;
+.best-movie p {
+  font-size: 28px;
+  font-weight: 200;
 }
 
 .bg-image {
   aspect-ratio: 1/1;
-  background-image: url("assets/biglebow.png");
+  background-image: url("assets/img/biglebow.png");
   background-position: center;
   background-size: cover;
   background-origin: border-box;
   position: relative;
   width: 100%;
 }
-.bg-image > .overlay {
+
+.bg-image .overlay {
   position: absolute;
   left: 0;
   right: 0;
   top: 15%;
-  padding: 1em;
+  padding: 20px 15px 15px 20px;
   background: rgba(20, 20, 20, 0.55);
   color: white;
 }
 
-.overlay > h3 {
+.overlay h3 {
   color: white;
+  font-size: 24px;
+  font-weight: 600;
 }
 
-.overlay > .details {
+.panel-element .details {
   background-color: #2d2c2c;
+  padding: 5px 25px;
   position: relative;
+  font-size: 14px;
+  font-weight: 500;
   right: 0;
   float: right;
 }
 
-/* TODO remove debug below*/
-.container {
-  background-color: aqua;
-}
-.row {
-  background-color: skyblue;
-}
-.col {
-  background-color: royalblue;
+.dropdown-section h1 {
+  margin: 0;
 }
 
-.details {
-  background-color: #fa0b0b;
-  color: white;
-  border-radius: 18px;
-  padding: 5px 30px;
-  text-align: center;
+.dropdown-section .d-flex {
+  margin: 1rem 0 1.5rem 0;
+  gap: 1em;
+}
+
+.dropdown-toggle {
+  text-align: left;
+  min-width: 320px;
+}
+
+.dropdown-toggle::after {
+  float: right;
+  margin-top: 22px;
+}
+
+.dropdown-menu {
+  padding: 0;
+  border-radius: 0;
+}
+
+.dropdown-item {
+  min-width: 320px;
+  padding: 6px 6px 6px 24px;
+}
+
+.dropdown-item.active {
+  color: black;
+  background-color: white;
+}
+
+.dropdown-item:hover {
+  background-color: #e7e7e7;
+}
+
+.dropdown-check {
+  float: right;
+}
+
+.modal-content {
+  border-radius: 0;
+  border: 6px solid black;
+}
+
+.modal-flex-text {
+  flex-basis: 175%;
+}
+
+.modal h1 {
+  font-size: 48px;
+  font-weight: 600;
+  color: black;
+}
+
+.modal h2 {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.modal h3 {
+  font-size: 24px;
+  font-weight: 400;
+}
+
+.modal p {
+  font-size: 24px;
+  font-weight: 300;
+}
+
+.modal a {
+  text-decoration: none;
+}
+
+h4.modal-small,
+p.modal-small {
+  font-size: 20px;
+}
+
+.modal img {
+  width: 100%;
+  height: auto;
+}
+
+@media (min-width: 992px) {
+  .best-movie p {
+    padding: 0 !important;
+  }
 }
 
 @media (max-width: 992px) {
   .best-movie .details {
     padding: 5px 30px;
   }
+
+  .details.plus {
+    padding: 0;
+  }
+
+  .modal {
+    padding: 80px;
+  }
+
+  .modal h1 {
+    font-size: 32px;
+  }
+
+  .modal h2 {
+    font-size: 18px;
+  }
+
+  .modal h3 {
+    font-size: 18px;
+  }
+
+  .modal p {
+    font-size: 18px;
+    margin-bottom: 5px;
+  }
+
+  .modal img {
+    margin: 25px 0;
+  }
 }
 
 @media (max-width: 768px) {
+  body {
+    padding: 20px 30px;
+  }
+
   .best-movie img {
     aspect-ratio: 4/3;
     object-fit: cover;
   }
+}
+
+/* TODO del debug */
+.debug-width {
+  position: fixed;
+  top: 0;
+  right: 5%;
+  font-size: 18px;
+  text-align: end;
+}
+.debug-small {
+  font-size: 12px;
+}
+
+.debug-underline {
+  text-decoration: underline;
 }

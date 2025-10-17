@@ -4,8 +4,19 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Just Stream It</title>
-    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous"> -->
+    <!-- <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    /> -->
     <link href="/bootstrap.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap"
+      rel="stylesheet"
+    />
     <link href="/style.css" rel="stylesheet" />
   </head>
   <!-- https://www.figma.com/design/6KzVM5R2pOBX637RcVWjJ7/Maquettes-JustStreamIt?node-id=0-1&p=f -->
@@ -13,10 +24,110 @@
   <!-- https://www.notion.so/Formation-OC-5a4c5e62365e431aa8a65136525da2fb?source=copy_link#1f54325ec9e98025b6a5f39420343879 -->
 
   <body>
-    <!-- TODO gérer padding sur le body ou trouver comment gérer plus que ce que j'ai fait  -->
+    <!-- TODO del debug -->
+    <p class="debug-width">
+      <span class="debug-small">
+        bootstrap breakpoints: <span style="text-decoration: underline">sm>576</span>
+        <span style="text-decoration: underline">md>768</span>
+        <span style="text-decoration: underline">lg>992</span>
+        <br /></span
+      >width =
+      <span id="width"></span>
+    </p>
+
+    <!-- Button trigger modal -->
+    <!-- <button
+      type="button"
+      class="btn btn-primary"
+      data-bs-toggle="modal"
+      data-bs-target="#exampleModal"
+    >
+      Launch demo modal
+    </button> -->
+
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="exampleModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-xl modal-dialog-scrollable">
+        <div class="modal-content">
+          <!-- <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div> -->
+          <div class="modal-body">
+            <div class="d-flex">
+              <div class="modal-flex-text">
+                <h1>The Big Lebowski</h1>
+                <h2>
+                  1998 - Comedy, Crime, Sport<br />PG-13 - 117 minutes (USA / UK)<br />IMDB score:
+                  8.1/10<br />Recettes au box-office: $48.2m
+                </h2>
+                <br />
+                <h3>Réalisé par:</h3>
+                <p>Joel Cohen, Ethan Cohen</p>
+              </div>
+              <div>
+                <a
+                  class="d-lg-none"
+                  href="#"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                  >&#10060;</a
+                >
+                <img
+                  class="d-none d-lg-block"
+                  src="assets/img/biglebow.png"
+                  alt="Cover image of [insérer <original_title>]"
+                />
+              </div>
+            </div>
+            <p>
+              When "the dude" Lebowski is mistaken for a millionaire Lebowski, two thugs urinate on
+              his rug to coerce him into paying a debt he knows nothing about. While attempting to
+              gain recompense for the ruined rug from his wealthy counterpart, he accepts a one-time
+              job with high pay-off. He enlists the help of his bowling buddy, Walter, a gun-toting
+              Jewish-convert with anger issues. Deception leads to more trouble, and it soon seems
+              that everyone from porn empire tycoons to nihilists want something from The Dude.
+            </p>
+            <img
+              class="d-lg-none"
+              src="assets/img/biglebow.png"
+              alt="Cover image of [insérer <original_title>]"
+            />
+            <h4 class="modal-small">Avec:</h4>
+            <p class="modal-small">
+              David Huddleston, Flea, Jack Kehler, Jeff Bridges, Jimmie Dale Gilmore, John Goodman,
+              John Turturro, Julianne Moore, Mark Pellegrino, Peter Stormare, Philip Moon, Philip
+              Seymour Hoffman, Steve Buscemi, Tara Reid, Torsten Voges
+            </p>
+            <a
+              href="#"
+              class="details plus d-none d-lg-block"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+              >Fermer</a
+            >
+          </div>
+          <!-- <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div> -->
+        </div>
+      </div>
+    </div>
     <header class="d-flex">
       <div class="mx-auto mx-md-0">
-        <!-- TODO faire l'aspect ratio / max height pour xs et sm (l'image est pas enitère) -->
         <img src="assets/img/JustStreamItLogo.png" alt="Just Stream It logo" class="header-logo" />
       </div>
       <h1 class="d-none m d-md-inline align-self-center">Vidéos à la demande</h1>
@@ -24,10 +135,8 @@
     <section class="best-movie">
       <h1>Meilleur film</h1>
       <div class="d-flex flex-wrap flex-md-nowrap gap-4">
-        <aside class="w-md-25">
-          <div>
-            <img src="assets/img/biglebow.png" alt="Cover image of [insérer <original_title>]" />
-          </div>
+        <aside>
+          <img src="assets/img/biglebow.png" alt="Cover image of [insérer <original_title>]" />
         </aside>
         <article>
           <h2>Titre film</h2>
@@ -37,94 +146,186 @@
             ratione reprehenderit inventore ad sapiente vero, molestias, at molestiae.
           </p>
           <div class="d-flex justify-content-center justify-content-md-end">
-            <a href="#" class="details">Détails</a>
+            <a href="#" class="details" data-bs-toggle="modal" data-bs-target="#exampleModal"
+              >Détails</a
+            >
           </div>
         </article>
       </div>
     </section>
-    <div class="container">
-      <div class="d-flex header">
-        <div class="align-self-sm-center align-self-md-start">
-          <img class="header-logo" src="assets/img/JustStreamItLogo.png" alt="Just Stream It logo" />
-        </div>
-        <div class="visible-md offcanvas-md align-self-center">
-          <div class="h2 text-white">Vidéos à la demande</div>
-        </div>
-      </div>
-      <h1>Meilleur film</h1>
-      <div class="row" id="spotlight">
-        <div class="col-md-4">
-          <img
-            src="assets/img/biglebow.png"
-            class="img-fluid"
-            alt="Cover image of [insérer <original_title>]"
-          />
-        </div>
-        <div class="col px-lg-5 pe-lg-5">
-          <div class="text-center">
-            <h2>Titre Film</h2>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, deleniti. Soluta quod
-              laudantium blanditiis pariatur?
-            </p>
-            <a class="details rounded-pill float-md-end">Détails</a>
-          </div>
-        </div>
-      </div>
-
+    <section class="panel best-rated container overflow-hidden">
       <h1>Films les mieux notés</h1>
-      <div class="row d-flex justify-content-around flex-warp border-3 border-black gap-3">
-        <div class="col m-3 col-12 col-md-5 col-lg-3 p-0">
+      <div class="row gy-4">
+        <div class="panel-element col col-12 col-md-6 col-lg-4">
           <div class="bg-image">
             <div class="overlay">
               <h3>Titre1</h3>
-              <a class="details rounded-pill">Détails</a>
+              <a href="#" class="details" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                >Détails</a
+              >
             </div>
           </div>
         </div>
-        <div class="col m-3 col-12 col-md-5 col-lg-3 p-0">
+        <div class="panel-element col col-12 col-md-6 col-lg-4">
           <div class="bg-image">
             <div class="overlay">
               <h3>Titre5</h3>
-              <a class="details rounded-pill">Détails</a>
+              <a href="#" class="details" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                >Détails</a
+              >
             </div>
           </div>
         </div>
-        <div class="col m-3 col-12 col-md-5 col-lg-3 p-0 d-none d-md-block">
+        <div class="panel-element col col-12 col-md-6 col-lg-4 d-none d-md-block">
           <div class="bg-image">
             <div class="overlay">
               <h3>Titre5</h3>
-              <a class="details rounded-pill">Détails</a>
+              <a href="#" class="details" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                >Détails</a
+              >
             </div>
           </div>
         </div>
-        <div class="col m-3 col-12 col-md-5 col-lg-3 p-0 d-none d-md-block">
+        <div class="panel-element col col-12 col-md-6 col-lg-4 d-none d-md-block">
           <div class="bg-image">
             <div class="overlay">
               <h3>Titre5</h3>
-              <a class="details rounded-pill">Détails</a>
+              <a href="#" class="details" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                >Détails</a
+              >
             </div>
           </div>
         </div>
-        <div class="col m-3 col-12 col-md-5 col-lg-3 p-0 d-none d-lg-block">
+        <div class="panel-element col col-12 col-md-6 col-lg-4 d-none d-lg-block">
           <div class="bg-image">
             <div class="overlay">
               <h3>Titre5</h3>
-              <a class="details rounded-pill">Détails</a>
+              <a href="#" class="details" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                >Détails</a
+              >
             </div>
           </div>
         </div>
-        <div class="col m-3 col-12 col-md-5 col-lg-3 p-0 d-none d-lg-block">
+        <div class="panel-element col col-12 col-md-6 col-lg-4 d-none d-lg-block">
           <div class="bg-image">
             <div class="overlay">
               <h3>Titre5</h3>
-              <a class="details rounded-pill">Détails</a>
+              <a href="#" class="details" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                >Détails</a
+              >
             </div>
           </div>
         </div>
-        <a class="details d-lg-none w-50 rounded-pill">Voir plus</a>
       </div>
-    </div>
+      <div class="row">
+        <a class="details plus d-lg-none w-50">Voir plus</a>
+      </div>
+    </section>
+    <section class="panel other1 dropdown-section">
+      <div class="d-flex flex-column align-items-center justify-content-md-start flex-md-row">
+        <h1>Autres:</h1>
+        <div class="dropdown">
+          <a
+            class="btn dropdown-toggle"
+            href="#"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >
+            Films d'horreur
+          </a>
+
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+            <li><a class="dropdown-item" href="#">Comédies</a></li>
+            <li><a class="dropdown-item" href="#">Famille</a></li>
+            <li>
+              <a class="dropdown-item active" href="#"
+                >Films de fantasy<span class="dropdown-check">✅</span></a
+              >
+            </li>
+            <!-- TODO appliquer ce span à la sélection active ET override le texte du dropdown show avec le texte du active -->
+            <li><a class="dropdown-item" href="#">Films d'horreur</a></li>
+            <li><a class="dropdown-item" href="#">Science-fiction</a></li>
+            <li><a class="dropdown-item" href="#">Westerns</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="container overflow-hidden">
+        <div class="row gy-4">
+          <div class="panel-element col col-12 col-md-6 col-lg-4">
+            <div class="bg-image">
+              <div class="overlay">
+                <h3>Titre1</h3>
+                <a href="#" class="details" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                  >Détails</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="panel-element col col-12 col-md-6 col-lg-4">
+            <div class="bg-image">
+              <div class="overlay">
+                <h3>Titre5</h3>
+                <a href="#" class="details" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                  >Détails</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="panel-element col col-12 col-md-6 col-lg-4 d-none d-md-block">
+            <div class="bg-image">
+              <div class="overlay">
+                <h3>Titre5</h3>
+                <a href="#" class="details" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                  >Détails</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="panel-element col col-12 col-md-6 col-lg-4 d-none d-md-block">
+            <div class="bg-image">
+              <div class="overlay">
+                <h3>Titre5</h3>
+                <a href="#" class="details" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                  >Détails</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="panel-element col col-12 col-md-6 col-lg-4 d-none d-lg-block">
+            <div class="bg-image">
+              <div class="overlay">
+                <h3>Titre5</h3>
+                <a href="#" class="details" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                  >Détails</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="panel-element col col-12 col-md-6 col-lg-4 d-none d-lg-block">
+            <div class="bg-image">
+              <div class="overlay">
+                <h3>Titre5</h3>
+                <a href="#" class="details" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                  >Détails</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <a class="details plus d-lg-none w-50">Voir plus</a>
+        </div>
+      </div>
+    </section>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
     <script src="index.js"></script>
     <!-- balise soit ici en fin de body, soit en fin de head avec defer -->
   </body>
