@@ -146,7 +146,7 @@ async function setPanelMovie(movie, panel_index) {
   }
   // TODO gérer le onerror qui m'a pas l'air de marcher en injection de html (vu que j'injecte en même temps le code d'errur et l'image à problème)
   element.innerHTML = `
-    <div class="bg-image" style="background-image: url('${movie.image_url}') onerror="this.style.display='none';" >
+    <div class="bg-image" style="background-image: url('${movie.image_url}')" onerror="this.style.display='none'" >
       <div class="overlay">
         <h3>${movie.title}</h3>
         <a href="javascript:void(0)" class="details" data-bs-toggle="modal" data-bs-target="#movieModal"
