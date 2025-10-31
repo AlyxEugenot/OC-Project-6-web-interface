@@ -1,0 +1,25 @@
+.bg-image {
+  aspect-ratio: 1/1;
+  background-image: url("assets/img/biglebow.png");
+  background-position: center;
+  background-size: cover;
+  background-origin: border-box;
+  position: relative;
+  width: 100%;
+}
+
+.bg-image .overlay {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 15%;
+  padding: 20px 15px 15px 20px;
+  background: rgba(20, 20, 20, 0.55);
+  color: white;
+}
+
+.overlay h3 {
+  color: white;
+  font-size: 24px;
+  font-weight: 600;
+}

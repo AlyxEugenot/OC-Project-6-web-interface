@@ -1,0 +1,32 @@
+.best-movie > .d-flex {
+  border: 5px solid black;
+  padding: 0.5em 1em;
+}
+
+.best-movie img {
+  width: 100%;
+  min-width: 20vh;
+  height: auto;
+}
+
+.best-movie h2 {
+  font-weight: 600;
+}
+
+.best-movie p {
+  font-size: 28px;
+  font-weight: 200;
+}
+
+@media (min-width: 992px) {
+  .best-movie p {
+    padding: 0 !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .best-movie img {
+    aspect-ratio: 4/3;
+    object-fit: cover;
+  }
+}

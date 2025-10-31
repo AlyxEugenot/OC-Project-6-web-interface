@@ -1,0 +1,101 @@
+.details {
+  background-color: #fa0b0b;
+  color: white;
+  text-align: center;
+  border-radius: 25px;
+  padding: 15px 50px;
+  text-decoration: none;
+  font-weight: 400;
+  /* font-weight: 500 in maquette */
+}
+
+.details.plus {
+  padding: 0 80px;
+  margin: auto;
+  margin-top: 10px;
+  width: 30%;
+}
+
+.panel-element .details {
+  background-color: #2d2c2c;
+  padding: 5px 25px;
+  position: relative;
+  font-size: 14px;
+  font-weight: 500;
+  right: 0;
+  float: right;
+}
+
+.dropdown-menu {
+  max-height: 350px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 0;
+  border-radius: 0;
+}
+
+.dropdown a {
+  font-size: 36px;
+  font-weight: 600;
+  border: 1px solid black;
+  border-radius: 0;
+}
+
+.dropdown-section h1 {
+  margin: 0;
+}
+
+.dropdown-section > .d-flex {
+  margin: 1rem 0 1.5rem 0;
+  gap: 1em;
+}
+
+.dropdown-toggle {
+  text-align: left;
+  min-width: 320px;
+}
+
+.dropdown-toggle::after {
+  float: right;
+  margin-top: 22px;
+  margin-right: 14px;
+}
+
+.dropdown-toggle:hover {
+  border-color: black;
+  background-color: #e7e7e7;
+}
+
+.dropdown-item {
+  min-width: 320px;
+  padding: 6px 0px 6px 24px;
+}
+
+.dropdown-item p {
+  padding-bottom: 0;
+  margin: 0;
+}
+
+.dropdown-item.active {
+  color: black;
+  background-color: white;
+}
+
+.dropdown-item:hover {
+  background-color: #e7e7e7;
+}
+
+.dropdown-check {
+  padding-right: 15px;
+  margin: 0;
+}
+
+@media (max-width: 992px) {
+  .best-movie .details {
+    padding: 5px 30px;
+  }
+
+  .details.plus {
+    padding: 0;
+  }
+}
