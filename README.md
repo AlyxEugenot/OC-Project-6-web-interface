@@ -32,8 +32,7 @@ python3 -m http-server
 
 ---
 
-> [!NOTE] Note
-> <br />
+> [!NOTE] <br />
 > A lot of image links have been shut down by Amazon since Open Classroom created the API and as a result, a lot of related console errors show up.
 > <br />
 > I purposefully let them as is as this is an issue I would report to the back end client.
