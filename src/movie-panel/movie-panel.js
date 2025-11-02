@@ -1,4 +1,4 @@
-import { getMovies } from "../api.js";
+import { getMovies } from "../generics/api.js";
 import { hide_movies_toggle, setDropdown } from "./interactive-elements.js";
 import setPanelMovie from "./panel-movies.js";
 

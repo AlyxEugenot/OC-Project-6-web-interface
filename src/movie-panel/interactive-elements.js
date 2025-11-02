@@ -1,4 +1,4 @@
-import { getGenres } from "../api.js";
+import { getGenres } from "../generics/api.js";
 import { updateMoviePanel } from "./movie-panel.js";
 
 /**

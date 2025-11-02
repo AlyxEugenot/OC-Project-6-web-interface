@@ -1,7 +1,7 @@
-import createMovie from "../create-movie.js";
+import createMovie from "../generics/create-movie.js";
+import { handleImageError } from "../generics/movie-utils.js";
+import { api_root, callAPI } from "../generics/api.js";
 import { updateModalEvent } from "../modal/modal.js";
-import { handleImageError } from "../movie-utils.js";
-import { api_root, callAPI } from "/src/api.js";
 
 /**
  * Creates the "best movie" element to be inserted.

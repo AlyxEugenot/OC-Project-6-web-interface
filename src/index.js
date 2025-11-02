@@ -1,5 +1,5 @@
-import setBestMovie from "./src/best-movie/best-movie.js";
-import { setPanelSection } from "./src/movie-panel/movie-panel.js";
+import setBestMovie from "./best-movie/best-movie.js";
+import { setPanelSection } from "./movie-panel/movie-panel.js";
 
 setBestMovie();
 setPanelSection("best-overall");

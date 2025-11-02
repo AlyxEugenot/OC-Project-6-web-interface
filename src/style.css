@@ -1,7 +1,7 @@
-@import "./src/best-movie/best-movie.css";
-@import "./src/modal/modal.css";
-@import "./src/movie-panel/interactive-elements.css";
-@import "./src/movie-panel/panel-movies.css";
+@import "./best-movie/best-movie.css";
+@import "./modal/modal.css";
+@import "./movie-panel/interactive-elements.css";
+@import "./movie-panel/panel-movies.css";
 
 /* bootstrap breakpoints :
 sm > 576

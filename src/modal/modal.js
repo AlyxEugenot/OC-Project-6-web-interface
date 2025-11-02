@@ -1,4 +1,4 @@
-import { handleImageError } from "../movie-utils.js";
+import { handleImageError } from "../generics/movie-utils.js";
 
 /**
  *Update all elements related to movie.
