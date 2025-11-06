@@ -25,7 +25,7 @@ export async function callAPI(request) {
  */
 export async function getGenres() {
   let genres = [];
-  let url = api_root + "/genres/";
+  let url = api_root + "/genres/?page_size=50";
 
   while (url) {
     const data = await callAPI(url);
@@ -45,13 +45,12 @@ export async function getGenres() {
  */
 export async function getMovies(genre) {
   const url =
-    api_root + `/titles/?${genre == null ? "" : "genre=" + genre + "&"}sort_by=-imdb_score`;
+    api_root +
+    `/titles/?${genre == null ? "" : "genre=" + genre + "&"}sort_by=-imdb_score&page_size=6`;
+  // 6 is the max number of elements we want to display in each panel
   let data = await callAPI(url);
-  let data2 = await callAPI(data.next);
-  let movie_data = data.results;
-  movie_data.push(data2.results[0]);
   let movies = [];
-  for (const movie of movie_data) {
+  for (const movie of data.results) {
     movies.push(await createMovie(movie.url));
   }
   return movies;

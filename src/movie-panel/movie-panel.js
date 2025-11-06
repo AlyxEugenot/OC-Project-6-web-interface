@@ -1,11 +1,12 @@
 import { getMovies } from "../generics/api.js";
+import { updateModalEvent } from "../modal/modal.js";
 import { hide_movies_toggle, setDropdown } from "./interactive-elements.js";
 import setPanelMovie from "./panel-movies.js";
 
 /**
  * Inject movie panel in section "section_id" from movie genre "genre".
  * Structure depends if section is dropdown.
- * @param {String} section_id Section id in which insert html.
+ * @param {String} section_id Section id in which to insert html.
  * @param {String} genre Movie genre to load best movies from.
  * @param {Boolean} isDropdown true if is dropdown (implement different html structure)
  */
@@ -15,6 +16,15 @@ export async function setPanelSection(section_id, genre, isDropdown = false) {
   const section = document
     .getElementById(section_id)
     .appendChild(document.createElement("section"));
+
+  const see_more_button =
+    movies.length < 3
+      ? ""
+      : `<div class="row">
+          <a class="details plus ${
+            movies.length < 4 ? "d-md-none" : "d-lg-none"
+          } w-50" href="javascript:void(0)">Voir plus</a>
+        </div>`;
   if (isDropdown) {
     section.classList.add("panel", "dropdown-section");
     section.innerHTML = `
@@ -40,9 +50,7 @@ export async function setPanelSection(section_id, genre, isDropdown = false) {
             <div class="row gy-4 panel-elements-parent">
             </div>
             
-            <div class="row">
-              <a class="details plus d-lg-none w-50" href="javascript:void(0)">Voir plus</a>
-            </div>
+            ${see_more_button}
           </div>
         </section>`;
   } else {
@@ -51,9 +59,7 @@ export async function setPanelSection(section_id, genre, isDropdown = false) {
         <h1>${genre == null ? "Films les mieux notés" : genre}</h1>
         <div class="row gy-4 panel-elements-parent">
         </div>
-        <div class="row">
-          <a class="details plus d-lg-none w-50" href="javascript:void(0)">Voir plus</a>
-        </div>
+        ${see_more_button}
         `;
   }
 
@@ -68,8 +74,10 @@ export async function setPanelSection(section_id, genre, isDropdown = false) {
     movie_panel.appendChild(await setPanelMovie(movies[i], i));
   }
 
-  const hidden_movies_toggle = section.querySelector(".plus");
-  hidden_movies_toggle.addEventListener("click", hide_movies_toggle);
+  if (movies.length > 2) {
+    const hidden_movies_toggle = section.querySelector(".plus");
+    hidden_movies_toggle.addEventListener("click", hide_movies_toggle);
+  }
 
   const all_href = section.querySelectorAll("href");
   for (link of all_href) {
@@ -81,18 +89,28 @@ export async function setPanelSection(section_id, genre, isDropdown = false) {
 
 /**
  * When selecting from a dropdown, update the movies from this panel to said genre.
+ *
+ * If number of available movies defer, recreate the section altogether.
  * @param {Element} panelElementsParent Panel element to inject movies in
  * @param {String} genre Genre of movies to inject.
  */
 export async function updateMoviePanel(panelElementsParent, genre) {
   const movies = await getMovies(genre);
 
-  for (let i = 0; i < panelElementsParent.children.length; i++) {
-    const element = panelElementsParent.children[i];
-    element.querySelector("h3").textContent = movies[i].title;
-    element.querySelector(".bg-image").style["background-image"] = `url(${movies[i].image_url})`;
-    element.movie = movies[i];
-    element.removeEventListener("click", updateModalEvent);
-    element.addEventListener("click", updateModalEvent);
+  if (movies.length != panelElementsParent.children.length) {
+    const panel_parent_with_id = panelElementsParent.closest(".panel").parentElement;
+    panel_parent_with_id.innerHTML = ""; // delete all children elements
+    await setPanelSection(panel_parent_with_id.id, genre, true); // sections to be updated always are dropdowns
+    panel_parent_with_id.scrollIntoView();
+  } else {
+    for (let i = 0; i < panelElementsParent.children.length; i++) {
+      const element = panelElementsParent.children[i];
+      element.querySelector("h3").textContent = movies[i].title;
+      element.querySelector(".bg-image").style["background-image"] = `url(${movies[i].image_url})`;
+      const details = element.querySelector(".details");
+      details.movie = movies[i];
+      details.removeEventListener("click", updateModalEvent);
+      details.addEventListener("click", updateModalEvent);
+    }
   }
 }

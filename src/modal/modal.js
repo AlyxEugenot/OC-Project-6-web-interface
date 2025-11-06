@@ -18,7 +18,6 @@ export async function updateModalEvent(event) {
 
   const images = modal.querySelectorAll("img");
   images.forEach((img) => {
-    console.log(img.parentElement);
     img.src = movie.image_url;
     img.alt = `<Affiche du film ${movie.title}>`;
     img.onerror = handleImageError(img);

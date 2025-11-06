@@ -33,7 +33,7 @@ export async function setDropdown(dropdownMenu, defaultGenre) {
     const genre = all_genres[i];
     const item = dropdownMenu.appendChild(document.createElement("li"));
     item.innerHTML = `
-      <a class="dropdown-item ${genre == defaultGenre ? "active" : ""}" href="javascript:void(0)">
+      <a class="dropdown-item${genre == defaultGenre ? " active" : ""}" href="javascript:void(0)">
         <div class="d-flex justify-content-between">
           <p>${genre}</p>
           ${genre == defaultGenre ? '<p class="dropdown-check">✅</p>' : ""}
@@ -49,10 +49,10 @@ export async function setDropdown(dropdownMenu, defaultGenre) {
  * @param {Event} event Button to add dropdown to.
  */
 export function selectDropdownGenre(event) {
-  const dropdownItem = event.currentTarget;
+  const dropdownItem = event.currentTarget.querySelector(".dropdown-item");
   const panelSection = dropdownItem.closest(".panel");
   const genre = dropdownItem.querySelector("p").textContent;
-  panelSection.querySelector(".dropdown-toggle").textContent = dropdownItem.textContent;
+  panelSection.querySelector(".dropdown-toggle").textContent = genre;
 
   const selected = panelSection.querySelectorAll(".active");
   for (let element of selected) {

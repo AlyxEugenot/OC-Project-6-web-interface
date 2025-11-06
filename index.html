@@ -18,12 +18,8 @@
     />
     <link href="src/style.css" rel="stylesheet" />
   </head>
-  <!-- https://www.figma.com/design/6KzVM5R2pOBX637RcVWjJ7/Maquettes-JustStreamIt?node-id=0-1&p=f -->
-
-  <!-- https://www.notion.so/Formation-OC-5a4c5e62365e431aa8a65136525da2fb?source=copy_link#1f54325ec9e98025b6a5f39420343879 -->
 
   <body>
-    <!-- Modal -->
     <div
       class="modal fade"
       id="movieModal"
@@ -33,15 +29,6 @@
     >
       <div class="modal-dialog modal-xl modal-dialog-scrollable">
         <div class="modal-content">
-          <!-- <div class="modal-header">
-            <h1 class="modal-title fs-5" id="movieModalLabel">Modal title</h1>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="modal"
-              aria-label="Close"
-            ></button>
-          </div> -->
           <div class="modal-body">
             <div class="d-flex">
               <div class="modal-flex-text">
@@ -96,10 +83,6 @@
               >Fermer</a
             >
           </div>
-          <!-- <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Save changes</button>
-          </div> -->
         </div>
       </div>
     </div>
@@ -113,222 +96,7 @@
     <div id="best-overall"></div>
     <div id="category1"></div>
     <div id="category2"></div>
-    <div id="dropdown-category1"></div>
-    <div id="dropdown-category2"></div>
-    <!-- <section class="best-movie">
-      <h1>Meilleur film</h1>
-      <div class="d-flex flex-wrap flex-md-nowrap gap-4">
-        <aside>
-          <img src="assets/img/biglebow.png" alt="Cover image of [insérer <original_title>]" />
-        </aside>
-        <article>
-          <h2>Titre film</h2>
-          <p class="p-lg-2">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores ducimus dolor
-            doloribus, corporis maiores vel eos? Voluptatem ab repudiandae quaerat blanditiis,
-            ratione reprehenderit inventore ad sapiente vero, molestias, at molestiae.
-          </p>
-          <div class="d-flex justify-content-center justify-content-md-end">
-            <a href="#" class="details" data-bs-toggle="modal" data-bs-target="#movieModal"
-              >Détails</a
-            >
-          </div>
-        </article>
-      </div>
-    </section>
-    <section class="panel container overflow-hidden">
-      <h1>Films les mieux notés</h1>
-      <div class="row gy-4">
-        <div class="panel-element col col-12 col-md-6 col-lg-4">
-          <div class="bg-image">
-            <div class="overlay">
-              <h3>Titre1</h3>
-              <a href="#" class="details" data-bs-toggle="modal" data-bs-target="#movieModal"
-                >Détails</a
-              >
-            </div>
-          </div>
-        </div>
-        <div class="panel-element col col-12 col-md-6 col-lg-4">
-          <div class="bg-image">
-            <div class="overlay">
-              <h3>Titre5</h3>
-              <a href="#" class="details" data-bs-toggle="modal" data-bs-target="#movieModal"
-                >Détails</a
-              >
-            </div>
-          </div>
-        </div>
-        <div class="panel-element col col-12 col-md-6 col-lg-4 d-none d-md-block">
-          <div class="bg-image">
-            <div class="overlay">
-              <h3>Titre5</h3>
-              <a href="#" class="details" data-bs-toggle="modal" data-bs-target="#movieModal"
-                >Détails</a
-              >
-            </div>
-          </div>
-        </div>
-        <div class="panel-element col col-12 col-md-6 col-lg-4 d-none d-md-block">
-          <div class="bg-image">
-            <div class="overlay">
-              <h3>Titre5</h3>
-              <a href="#" class="details" data-bs-toggle="modal" data-bs-target="#movieModal"
-                >Détails</a
-              >
-            </div>
-          </div>
-        </div>
-        <div class="panel-element col col-12 col-md-6 col-lg-4 d-none d-lg-block">
-          <div class="bg-image">
-            <div class="overlay">
-              <h3>Titre5</h3>
-              <a href="#" class="details" data-bs-toggle="modal" data-bs-target="#movieModal"
-                >Détails</a
-              >
-            </div>
-          </div>
-        </div>
-        <div class="panel-element col col-12 col-md-6 col-lg-4 d-none d-lg-block">
-          <div class="bg-image">
-            <div class="overlay">
-              <h3>Titre5</h3>
-              <a href="#" class="details" data-bs-toggle="modal" data-bs-target="#movieModal"
-                >Détails</a
-              >
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <a class="details plus d-lg-none w-50">Voir plus</a>
-      </div>
-    </section>
-    <section class="panel dropdown-section">
-      <div class="d-flex flex-column align-items-center justify-content-md-start flex-md-row">
-        <h1>Autres:</h1>
-        <div class="dropdown">
-          <a
-            class="btn dropdown-toggle"
-            href="#"
-            role="button"
-            data-bs-toggle="dropdown"
-            aria-haspopup="true"
-            aria-expanded="false"
-          >
-            Films d'horreur
-          </a>
-
-          <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-            <li>
-              <a class="dropdown-item active" href="#">
-                <div class="d-flex justify-content-between">
-                  <p>Comedy</p>
-                </div>
-              </a>
-            </li>
-            <li>
-              <a class="dropdown-item active" href="#">
-                <div class="d-flex justify-content-between">
-                  <p>Adventure</p>
-                  <p class="dropdown-check">✅</p>
-                </div>
-              </a>
-            </li>
-
-            <li>
-              <a class="dropdown-item active" href="#">
-                <div class="d-flex justify-content-between">
-                  <p>Films d'horreur</p>
-                </div>
-              </a>
-            </li>
-            <li>
-              <a class="dropdown-item active" href="#">
-                <div class="d-flex justify-content-between">
-                  <p>Reality-TV</p>
-                </div>
-              </a>
-            </li>
-            <li>
-              <a class="dropdown-item active" href="#">
-                <div class="d-flex justify-content-between">
-                  <p>Westerns</p>
-                </div>
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-      <div class="container overflow-hidden">
-        <div class="row gy-4 panel-elements-parent">
-          <div class="panel-element col col-12 col-md-6 col-lg-4">
-            <div class="bg-image">
-              <div class="overlay">
-                <h3>Titre1</h3>
-                <a href="#" class="details" data-bs-toggle="modal" data-bs-target="#movieModal"
-                  >Détails</a
-                >
-              </div>
-            </div>
-          </div>
-          <div class="panel-element col col-12 col-md-6 col-lg-4">
-            <div class="bg-image">
-              <div class="overlay">
-                <h3>Titre5</h3>
-                <a href="#" class="details" data-bs-toggle="modal" data-bs-target="#movieModal"
-                  >Détails</a
-                >
-              </div>
-            </div>
-          </div>
-          <div class="panel-element col col-12 col-md-6 col-lg-4 d-none d-md-block">
-            <div class="bg-image">
-              <div class="overlay">
-                <h3>Titre5</h3>
-                <a href="#" class="details" data-bs-toggle="modal" data-bs-target="#movieModal"
-                  >Détails</a
-                >
-              </div>
-            </div>
-          </div>
-          <div class="panel-element col col-12 col-md-6 col-lg-4 d-none d-md-block">
-            <div class="bg-image">
-              <div class="overlay">
-                <h3>Titre5</h3>
-                <a href="#" class="details" data-bs-toggle="modal" data-bs-target="#movieModal"
-                  >Détails</a
-                >
-              </div>
-            </div>
-          </div>
-          <div class="panel-element col col-12 col-md-6 col-lg-4 d-none d-lg-block">
-            <div class="bg-image">
-              <div class="overlay">
-                <h3>Titre5</h3>
-                <a href="#" class="details" data-bs-toggle="modal" data-bs-target="#movieModal"
-                  >Détails</a
-                >
-              </div>
-            </div>
-          </div>
-          <div class="panel-element col col-12 col-md-6 col-lg-4 d-none d-lg-block">
-            <div class="bg-image">
-              <div class="overlay">
-                <h3>Titre5</h3>
-                <a href="#" class="details" data-bs-toggle="modal" data-bs-target="#movieModal"
-                  >Détails</a
-                >
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="row">
-          <a class="details plus d-lg-none w-50">Voir plus</a>
-        </div>
-      </div>
-    </section> -->
+    <div id="dropdown-category"></div>
 
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
@@ -336,6 +104,5 @@
       crossorigin="anonymous"
     ></script>
     <script src="src/index.js" type="module"></script>
-    <!-- balise soit ici en fin de body, soit en fin de head avec defer -->
   </body>
 </html>
